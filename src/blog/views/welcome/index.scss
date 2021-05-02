@@ -1,0 +1,171 @@
+@import '~@stylesheet/var.scss';
+
+.rabit-welcome {
+    &__bg {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: url('../../assets/bg.jpeg') no-repeat center bottom;
+        background-size: 100% 100%;
+        .logo {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: -200px;
+            border: 5px solid rgba($color:  #fff, $alpha: 0.35);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 50px);
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            margin:0;
+            padding:0;
+            letter-spacing: 5px;
+            color:transparent;
+            &:before {
+                content: attr(data-text);
+                position:absolute;
+                top: 0px;
+                left:0px;
+                width:100%;
+                height:100%;
+                color:#FFF;
+                overflow: hidden;
+                border-right: 1px solid #FFF;
+                animation: type 2.5s steps(15) 1s;
+                white-space: nowrap;
+            }
+        }
+    }
+    &__loading {
+        position: absolute;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        &--left, &--right {
+            position: fixed;
+            z-index: 1000;
+            width: 50%;
+            height: 100%;
+            background-color: $--preloader-bg;
+        }
+        &--right {
+            right: 0;
+        }
+        &-spinner {
+            position: fixed;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            .configure-border-1 {
+                position: absolute;
+                width: 115px;
+                height: 115px;
+                padding: 3px;
+                animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+                background: #ffab91;
+            }
+            .configure-border-2 {
+                left: -115px;
+                width: 115px;
+                height: 115px;
+                padding: 3px;
+                transform: rotate(45deg);
+                animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+                background: #3ff9dc;
+            }
+            .loading-word {
+                font-size: 20px;
+                position: absolute;
+                color: $--preloader-color;
+            }
+            .configure-core {
+                width: 100%;
+                height: 100%;
+                background-color: $--preloader-bg;
+            }
+        }
+        &.loaded {
+            .rabit-welcome__loading--left {
+                transition: all 0.5s;
+                transform: translate(-100%, 0);
+            }
+            .rabit-welcome__loading--right {
+                transition: all 0.5s;
+                transform: translate(100%, 0);
+            }
+            .rabit-welcome__loading-spinner {
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes type {
+    0% {
+      width:0%;
+    }
+
+    50%{
+      width:100%;
+
+    }
+
+    100%{
+      width:100%;
+    }
+
+  }
+
+@keyframes configure-clockwise {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes configure-xclockwise {
+    0% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(-45deg);
+    }
+    50% {
+        transform: rotate(-135deg);
+    }
+    75% {
+        transform: rotate(-225deg);
+    }
+    100% {
+        transform: rotate(-315deg);
+    }
+}

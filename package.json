@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-demo": "vue-cli-service build demo",
+    "build-blog": "vue-cli-service build blog",
+    "deploy": "bash deploy.sh",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -20,11 +24,18 @@
     "@vue/cli-plugin-vuex": "^4.5.12",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.12.0",
     "saas": "^1.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "sass-loader": "^7.1.0",
+    "svg-loader": "0.0.2",
+    "svg-sprite-loader": "^6.0.6",
+    "vue-template-compiler": "^2.6.11",
+    "worker-loader": "^3.0.8"
   },
   "eslintConfig": {
     "root": true,
