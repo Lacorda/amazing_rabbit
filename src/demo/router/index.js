@@ -35,6 +35,16 @@ const routes = [
         component: () => import('../views/index/same-size'),
     },
     {
+        path: '/vue',
+        name: 'Vue',
+        component: () => import('../views/vue'),
+    },
+    {
+        path: '/vue/slot',
+        name: 'VueSlot',
+        component: () => import('../views/vue/slot'),
+    },
+    {
         path: '/more',
         name: 'More',
         component: () => import('../views/more'),

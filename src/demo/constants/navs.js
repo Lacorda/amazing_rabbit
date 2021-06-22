@@ -31,6 +31,20 @@ export default [
         ],
     },
     {
+        name: 'Vue',
+        path: '/vue',
+        items: [
+            {
+                name: 'Vue组件间的通信',
+                path: '/vue',
+            },
+            {
+                name: 'Slot插槽',
+                path: '/vue/slot',
+            },
+        ],
+    },
+    {
         name: 'More',
         path: '/more',
         items: [
