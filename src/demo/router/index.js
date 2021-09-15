@@ -35,6 +35,11 @@ const routes = [
         component: () => import('../views/index/same-size'),
     },
     {
+        path: '/index/pover',
+        name: 'Pover',
+        component: () => import('../views/index/pover'),
+    },
+    {
         path: '/vue',
         name: 'Vue',
         component: () => import('../views/vue'),
@@ -43,6 +48,16 @@ const routes = [
         path: '/vue/slot',
         name: 'VueSlot',
         component: () => import('../views/vue/slot'),
+    },
+    {
+        path: '/tools',
+        name: 'Upload',
+        component: () => import('../views/tools/upload'),
+    },
+    {
+        path: '/tools/file-read',
+        name: 'FileRead',
+        component: () => import('../views/tools/file-read'),
     },
     {
         path: '/more',

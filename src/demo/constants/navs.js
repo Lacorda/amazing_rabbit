@@ -28,6 +28,10 @@ export default [
                 name: '5.CSS宽高等比缩放',
                 path: '/index/same-size',
             },
+            {
+                name: '6.position与overflow',
+                path: '/index/pover',
+            },
         ],
     },
     {
@@ -41,6 +45,20 @@ export default [
             {
                 name: 'Slot插槽',
                 path: '/vue/slot',
+            },
+        ],
+    },
+    {
+        name: '工具',
+        path: '/tools',
+        items: [
+            {
+                name: '上传到OSS',
+                path: '/tools',
+            },
+            {
+                name: '读取文件',
+                path: '/tools/file-read',
             },
         ],
     },

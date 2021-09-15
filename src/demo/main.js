@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue';
 import routes from './router';
+import HLGUI from 'hlg-ui';
 
 import bem from '@mixins/bem';
 
@@ -14,6 +15,7 @@ import {
 Vue.config.devtools = true;
 
 Vue.use(VueRouter);
+Vue.use(HLGUI);
 
 Vue.mixin(bem);
 

@@ -44,7 +44,16 @@ module.exports = {
         // 本地端口
         port: 9001,
         // 代理
-        proxy: '',
+        proxy: {
+            '/template': {
+                // 服务地址，即你要访问的服务器地址
+                target: 'http://cloudprint.cainiao.com',
+                changeOrigin: true,
+                onProxyReq: (proxyReq) => {
+                    proxyReq.setHeader('Cookie', 'SL_GWPT_Show_Hide_tmp=1; x-hng="lang=zh"; lang=zh; l=eBMaR0MHjspuJ_QxB91CPurza779m_AjOyygaNbMiIErmOCnwPYNSrWXAow6dIiHqNKO7t5UUb-uRI7QdYLn6nOkwxl2BeYB4rsxXZ96-e1..; tfstk=c8CVIPxCxSF2KZR_pIOaGucRyomDsO1ct1ny5KX-9qOrJYqUeB7ViAo9rv26UpNnuKf..');
+                },
+            }
+        },
         // eslint-loader警告配置
         overlay: {
             warnings: true,
