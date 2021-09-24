@@ -77,6 +77,10 @@ export default {
                     label: '欢乐逛-打单'
                 },
                 {
+                    value: 'tbgr-trade-dev/template/',
+                    label: '欢乐逛-打单-预发'
+                },
+                {
                     value: 'gdd/template/',
                     label: '逛打单'
                 },

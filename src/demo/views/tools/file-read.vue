@@ -5,6 +5,16 @@
 -->
 <template>
     <RContainer>
+        平台选择
+        <HlgSelect v-model="platform" placeholder="请选择" @change="onChangeSelect">
+            <HlgOption
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+            />
+        </HlgSelect>
+        <br>
         <div class="local panel">
             <div class="panel-title">
                 本地文件<br>
@@ -41,12 +51,25 @@
 
 <script>
 const axios = require('axios');
-// const CUSTOMKEY_CAINIAO = 'ref="CUSTOM_AREA"';
-// const CUSTOMKEY_PDD = 'name="user"';
+const CUSTOMKEY_CAINIAO = 'ref="CUSTOM_AREA"';
+const CUSTOMLINK_CAINIAO = 'https://hlgcdn.oss-cn-hangzhou.aliyuncs.com/tbgr-trade/template/百世.txt';
+const CUSTOMKEY_PDD = 'name="user"';
+const CUSTOMLINK_PDD = 'https://hlgcdn.oss-cn-hangzhou.aliyuncs.com/gdd/template/一联单.xml';
 
 export default {
     data() {
         return {
+            options: [
+                {
+                    value: 'cainiao',
+                    label: '菜鸟'
+                },
+                {
+                    value: 'pdd',
+                    label: '拼多多'
+                },
+            ],
+            platform: 'cainiao',
             content: {
                 local: '',
                 service: ''
@@ -57,7 +80,25 @@ export default {
             },
         };
     },
+    computed: {
+        customKey() {
+            return this.platform === 'cainiao' ? CUSTOMKEY_CAINIAO : CUSTOMKEY_PDD;
+        },
+        url() {
+            return this.platform === 'cainiao' ? CUSTOMLINK_CAINIAO : CUSTOMLINK_PDD;
+        },
+    },
     methods: {
+        onChangeSelect() {
+            this.content = {
+                local: '',
+                service: ''
+            };
+            this.custom = {
+                local: '',
+                service: ''
+            };
+        },
         async onChangeInput() {
             if (!this.$refs.file) return;
             const file = this.$refs.file.files[0];
@@ -72,13 +113,14 @@ export default {
             }
         },
         onRead() {
-            axios.get('http://hlgcdn.oss-cn-hangzhou.aliyuncs.com/gdd/template/%E7%99%BE%E4%B8%96.txt')
+            axios.get(this.url)
                 .then((res) => {
                     this.content.service = res.data;
                 });
         },
         onParser(type) {
-            const execMatch = /<layout(?:[.\n\s\w\=\"_:;]+)(ref="CUSTOM_AREA")([.\n\s\w\=\"_:;]+)\>(?:[.\n\s\w\=\"_:;]+)/gm.exec(this.content[type]);
+            const reg = new RegExp(`<layout(?:[.\\n\\s\\w\=\"_:;,]+)(${this.customKey})([.\\n\\s\\w\=\"_:;,]+)\>(?:[.\\n\\s\\w\=\"_:;,]+)`, 'gm');
+            const execMatch = reg.exec(this.content[type]);
             if (execMatch) {
                 const match = execMatch[2].match(/(width|height|left|top)="(\d+)"/gm);
                 const result = {};
@@ -94,8 +136,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/deep/ .hlg-select .hlg-input {
+    width: 100px;
+}
 .panel-content {
-    max-height: 400px;
+    max-height: 200px;
     overflow-y: auto;
 }
 </style>
