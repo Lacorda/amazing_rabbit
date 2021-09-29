@@ -92,6 +92,10 @@ export default {
                     value: 'tbgr-trade/sf-template/',
                     label: '欢乐逛-打单-顺丰'
                 },
+                {
+                    value: 'huanleguang/',
+                    label: '欢乐逛官网'
+                },
             ]
         };
     },
