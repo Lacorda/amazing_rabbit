@@ -70,8 +70,12 @@ export default {
             accessKeySecret: '',
             stsToken: '',
             fileName: '',
-            uploadTo: '',
+            uploadTo: 'tbgr/promotion/tool/cloud/',
             options: [
+                {
+                    value: 'tbgr/promotion/tool/cloud/',
+                    label: '欢乐逛-云币'
+                },
                 {
                     value: 'tbgr-trade/template/',
                     label: '欢乐逛-打单'
@@ -95,6 +99,10 @@ export default {
                 {
                     value: 'huanleguang/',
                     label: '欢乐逛官网'
+                },
+                {
+                    value: 'tbgr-activity/',
+                    label: '欢乐逛-活动'
                 },
             ]
         };
