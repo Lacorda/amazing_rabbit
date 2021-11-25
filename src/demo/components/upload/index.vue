@@ -70,8 +70,12 @@ export default {
             accessKeySecret: '',
             stsToken: '',
             fileName: '',
-            uploadTo: 'tbgr/promotion/tool/cloud/',
+            uploadTo: 'tbgr-trade/waybill-bg/',
             options: [
+                {
+                    value: 'tbgr-trade/waybill-bg/',
+                    label: '欢乐逛-快递模板底图'
+                },
                 {
                     value: 'tbgr/promotion/tool/cloud/',
                     label: '欢乐逛-云币'
@@ -95,6 +99,10 @@ export default {
                 {
                     value: 'tbgr-trade/sf-template/',
                     label: '欢乐逛-打单-顺丰'
+                },
+                {
+                    value: 'tbgr-trade/express-logo/',
+                    label: '欢乐逛-打单-快递logo'
                 },
                 {
                     value: 'huanleguang/',

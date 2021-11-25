@@ -60,6 +60,10 @@ export default [
                 name: '读取文件',
                 path: '/tools/file-read',
             },
+            {
+                name: 'test',
+                path: '/tools/test',
+            },
         ],
     },
     {
