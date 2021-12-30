@@ -70,8 +70,12 @@ export default {
             accessKeySecret: '',
             stsToken: '',
             fileName: '',
-            uploadTo: 'tbgr-trade/waybill-bg/',
+            uploadTo: 'tbgr-crm/',
             options: [
+                {
+                    value: 'tbgr-crm/',
+                    label: '欢乐逛-短信'
+                },
                 {
                     value: 'tbgr-trade/waybill-bg/',
                     label: '欢乐逛-快递模板底图'
