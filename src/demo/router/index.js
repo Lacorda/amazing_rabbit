@@ -30,6 +30,11 @@ const routes = [
         component: () => import('../views/index/layout-flex'),
     },
     {
+        path: '/index/layout-float',
+        name: 'LayoutFloat',
+        component: () => import('../views/index/layout-float'),
+    },
+    {
         path: '/index/same-size',
         name: 'SameSize',
         component: () => import('../views/index/same-size'),

@@ -29,7 +29,11 @@ export default [
                 path: '/index/same-size',
             },
             {
-                name: '6.position与overflow',
+                name: '6.圣杯布局与双飞翼布局',
+                path: '/index/layout-float',
+            },
+            {
+                name: '7.position与overflow',
                 path: '/index/pover',
             },
         ],
