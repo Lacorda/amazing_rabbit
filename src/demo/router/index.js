@@ -2,7 +2,7 @@ const routes = [
     {
         path: '/',
         name: '/',
-        redirect: '/index',
+        redirect: '/index/test-oaid',
     },
     {
         path: '/index',
@@ -14,6 +14,11 @@ const routes = [
     //     name: 'Closure',
     //     component: () => import('../views/index/closure.vue'),
     // },
+    {
+        path: '/index/test-oaid',
+        name: 'Oaid',
+        component: () => import('../views/index/test-oaid'),
+    },
     {
         path: '/index/web-worker',
         name: 'WebWorker',
@@ -38,6 +43,11 @@ const routes = [
         path: '/index/same-size',
         name: 'SameSize',
         component: () => import('../views/index/same-size'),
+    },
+    {
+        path: '/index/stack-level',
+        name: 'stackLevel',
+        component: () => import('../views/index/stack-level'),
     },
     {
         path: '/index/pover',

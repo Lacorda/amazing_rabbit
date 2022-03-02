@@ -9,6 +9,10 @@ export default [
         path: '/index',
         items: [
             {
+                name: '0.测试oaid',
+                path: '/index/test-oaid',
+            },
+            {
                 name: '1.循环里的闭包',
                 path: '/index',
             },
@@ -35,6 +39,10 @@ export default [
             {
                 name: '7.position与overflow',
                 path: '/index/pover',
+            },
+            {
+                name: '8.层叠上下文',
+                path: '/index/stack-level',
             },
         ],
     },
