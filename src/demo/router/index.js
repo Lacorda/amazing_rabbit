@@ -2,7 +2,7 @@ const routes = [
     {
         path: '/',
         name: '/',
-        redirect: '/index/test-oaid',
+        redirect: '/index',
     },
     {
         path: '/index',
@@ -65,6 +65,11 @@ const routes = [
         component: () => import('../views/vue/slot'),
     },
     {
+        path: '/vue/observer',
+        name: 'VueObserver',
+        component: () => import('../views/vue/observer'),
+    },
+    {
         path: '/tools',
         name: 'Upload',
         component: () => import('../views/tools/upload'),
@@ -78,6 +83,12 @@ const routes = [
         path: '/more',
         name: 'More',
         component: () => import('../views/more'),
+    },
+    // 手写实现
+    {
+        path: '/manual/js',
+        name: 'ManualJs',
+        component: () => import('../views/manual/js'),
     },
 ];
 

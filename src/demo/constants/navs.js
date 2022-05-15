@@ -47,6 +47,16 @@ export default [
         ],
     },
     {
+        name: '手写实现',
+        path: '/manual',
+        items: [
+            {
+                name: 'js基础篇',
+                path: '/manual/javascript',
+            },
+        ],
+    },
+    {
         name: 'Vue',
         path: '/vue',
         items: [
@@ -57,6 +67,10 @@ export default [
             {
                 name: 'Slot插槽',
                 path: '/vue/slot',
+            },
+            {
+                name: 'observer',
+                path: '/vue/observer',
             },
         ],
     },
