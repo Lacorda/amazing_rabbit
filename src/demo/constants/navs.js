@@ -72,6 +72,10 @@ export default [
                 name: 'observer',
                 path: '/vue/observer',
             },
+            {
+                name: '源码系列',
+                path: '/vue/resource',
+            },
         ],
     },
     {

@@ -70,6 +70,11 @@ const routes = [
         component: () => import('../views/vue/observer'),
     },
     {
+        path: '/vue/resource',
+        name: 'VueResource',
+        component: () => import('../views/vue/resource'),
+    },
+    {
         path: '/tools',
         name: 'Upload',
         component: () => import('../views/tools/upload'),
