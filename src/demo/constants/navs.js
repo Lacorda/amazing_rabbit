@@ -76,6 +76,10 @@ export default [
                 name: '源码系列',
                 path: '/vue/resource',
             },
+            {
+                name: 'keepAlive',
+                path: '/vue/keepAlive',
+            },
         ],
     },
     {

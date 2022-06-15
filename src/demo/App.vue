@@ -1,5 +1,7 @@
 <template>
-    <RouterView />
+    <KeepAlive include="KeepAlive">
+        <RouterView />
+    </KeepAlive>
 </template>
 
 <script>

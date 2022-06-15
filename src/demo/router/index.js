@@ -75,6 +75,11 @@ const routes = [
         component: () => import('../views/vue/resource'),
     },
     {
+        path: '/vue/keepAlive',
+        name: 'VueResource',
+        component: () => import('../views/vue/keepAlive'),
+    },
+    {
         path: '/tools',
         name: 'Upload',
         component: () => import('../views/tools/upload'),
